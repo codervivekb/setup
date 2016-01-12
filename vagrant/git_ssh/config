@@ -1,0 +1,7 @@
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+Host oogit
+        HostName github.com
+        User git
+        IdentityFile /root/.ssh/git_rsa
+        IdentitiesOnly yes
