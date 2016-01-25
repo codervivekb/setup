@@ -42,9 +42,49 @@ Create local inductor:
 	
 	cd /opt/oneops ; inductor create ; cd inductor ; inductor add
 
-It will ask a series of questions and then you can run:
+It will ask a series of questions 
 
-	inductor start ; inductor tail
+```bash
+[root@localhost inductor]# inductor add
+What message queue host (if empty defaults to localhost)? 
+Manage dns? (on or off - defaults to off) on
+Debug mode? (keeps ssh keys and doesn't terminate compute on compute::add failure. on or off - defaults to off) on
+Metrics collections? (if empty defaults to false)? 
+What compute attribute to use for the ip to connect (if empty defaults to private_ip)? public_ip
+Queue location? /public/oneops/clouds/aws
+URL to the UI? http://localhost:9090
+Logstash cert file location ? (If empty defaults to local cloud cert) 
+Comma seperated list of logstash host:port ? (if empty defaults to localhost:5000) 
+Max Consumers? 10
+Max Local Consumers (ones for iaas)? 10
+What is the authorization key? awssecretkey
+Any additional java args to default (If empty uses deault.)? 
+      create  clouds-available/public.oneops.clouds.aws
+      create  clouds-available/public.oneops.clouds.aws/bin/inductor_agent.sh
+      create  clouds-available/public.oneops.clouds.aws/conf/chef/chef.rb.local
+      create  clouds-available/public.oneops.clouds.aws/conf/chef/chef.rb.remote
+      create  clouds-available/public.oneops.clouds.aws/conf/inductor.properties
+      create  clouds-available/public.oneops.clouds.aws/conf/log4j.xml
+      create  clouds-available/public.oneops.clouds.aws/conf/vmargs
+      create  clouds-available/public.oneops.clouds.aws/logstash-forwarder/cert/logstash-forwarder.crt
+      create  clouds-available/public.oneops.clouds.aws/logstash-forwarder/conf/logstash-forwarder.conf
+      create  clouds-available/public.oneops.clouds.aws/logstash-forwarder/log/output.log
+      create  clouds-available/public.oneops.clouds.aws/sandbox
+      create  clouds-available/public.oneops.clouds.aws/cache
+      create  clouds-available/public.oneops.clouds.aws/backup
+      create  clouds-available/public.oneops.clouds.aws/data
+      create  clouds-available/public.oneops.clouds.aws/retry
+      enable  clouds-enabled/public.oneops.clouds.aws
+     success  Next Step: inductor start ; inductor tail
+[root@localhost inductor]# inductor start ; inductor tail
+       start  public.oneops.clouds.aws
+```
 
-The `inductor tail` will show you the logs from any deployment.
+you should see a line like:
+
+```
+2016-01-22 18:38:25,462  INFO   FailoverTransport:1065  Successfully connected to ssl://localhost:61617?keepAlive=true
+```
+
+Now you can use the cloud in an Environment.
 
