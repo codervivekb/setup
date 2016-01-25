@@ -42,13 +42,13 @@ Create local inductor:
 	
 	cd /opt/oneops ; inductor create ; cd inductor ; inductor add
 
-It will ask a series of questions 
+It will ask a series of questions, below is an example.  note: If a different location is used, lookup the auth key in the cloud template - located [https://github.com/oneops/circuit-oneops-1/tree/master/clouds](here)
 
 ```bash
 [root@localhost inductor]# inductor add
 What message queue host (if empty defaults to localhost)? 
 Manage dns? (on or off - defaults to off) on
-Debug mode? (keeps ssh keys and doesn't terminate compute on compute::add failure. on or off - defaults to off) on
+Debug mode? (keeps ssh keys and doesn\'t terminate compute on compute::add failure. on or off - defaults to off) on
 Metrics collections? (if empty defaults to false)? 
 What compute attribute to use for the ip to connect (if empty defaults to private_ip)? public_ip
 Queue location? /public/oneops/clouds/aws
