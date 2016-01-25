@@ -42,7 +42,7 @@ Create local inductor:
 	
 	cd /opt/oneops ; inductor create ; cd inductor ; inductor add
 
-It will ask a series of questions, below is an example.  note: If a different location is used, lookup the auth key in the cloud template - located [https://github.com/oneops/circuit-oneops-1/tree/master/clouds](here)
+It will ask a series of questions, below is an example.  note: If a different location is used, lookup the auth key in the cloud template - located [here](https://github.com/oneops/circuit-oneops-1/tree/master/clouds)
 
 ```bash
 [root@localhost inductor]# inductor add
